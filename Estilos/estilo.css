@@ -6,12 +6,27 @@ body {
   height: 100vh;
 }
 
+.level {
+  width: 180px;
+  height: 50px;
+  background: #d63436;
+  color: #4037b8;
+  font-size: 3rem;
+  font-family: sans-serif;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(70% - 200px);
+  border-radius: 5px;
+  padding: 0.5em 0.5em 0.5em;
+}
+
 .gameboard {
   height: 200vh;
   width: 200vh;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0;
+  position: fixed;
   max-height: 100vh;
   max-width: 100vh;
 }

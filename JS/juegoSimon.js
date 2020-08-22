@@ -4,7 +4,7 @@ const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
 const ULTIMO_NIVEL = 10
-
+const score = document.getElementById('score')
 class Juego {
   constructor() {
     this.inicializar = this.inicializar.bind(this)
@@ -39,6 +39,7 @@ class Juego {
   }
 
   siguienteNivel() {
+    score.innerHTML=`Nivel: ${this.nivel}`
     this.subnivel = 0
     this.iluminarSecuencia()
     this.agregarEventosClick()
@@ -121,12 +122,12 @@ class Juego {
   }
 
   ganoElJuego() {
-    swal('Platzi', 'Felicitaciones, ganaste el juego!', 'success')
+    swal('Felicitaciones', 'Ganaste el juego!', 'success')
       .then(this.inicializar)
   }
 
   perdioElJuego() {
-    swal('Platzi', 'Lo lamentamos, perdiste :(', 'error')
+    swal('Perdiste', 'Lo lamento, has perdido :(', 'error')
       .then(() => {
         this.eliminarEventosClick()
         this.inicializar()
