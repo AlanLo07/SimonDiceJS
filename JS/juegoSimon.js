@@ -5,15 +5,25 @@ const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
 const ULTIMO_NIVEL = 10
 const score = document.getElementById('score')
+const player = document.getElementById('player')
 class Juego {
   constructor() {
+    this.player=""
     this.inicializar = this.inicializar.bind(this)
-    this.inicializar()
-    this.generarSecuencia()
-    setTimeout(this.siguienteNivel, 500)
+    this.generarSecuencia = this.generarSecuencia.bind(this)
+    swal("Escribe tu nombre:", {
+      content: "input",
+    })
+    .then((value) => {
+      this.player=value
+      this.inicializar()
+      this.generarSecuencia()
+      setTimeout(this.siguienteNivel, 500)
+    });
   }
 
   inicializar() {
+    player.innerHTML=`Jugador: ${this.player}`
     this.siguienteNivel = this.siguienteNivel.bind(this)
     this.elegirColor = this.elegirColor.bind(this)
     this.toggleBtnEmpezar()

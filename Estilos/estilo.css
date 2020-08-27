@@ -6,6 +6,20 @@ body {
   height: 100vh;
 }
 
+.player {
+  width: 500px;
+  height: 50px;
+  background: #c25278;
+  color: #8202a0;
+  font-size: 3rem;
+  font-family: sans-serif;
+  position: absolute;
+  top: calc(10% - 10px);
+  left: calc(70% - 200px);
+  border-radius: 5px;
+  padding: 0.5em 0.5em 0.5em;
+}
+
 .level {
   width: 180px;
   height: 50px;
